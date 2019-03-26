@@ -8,14 +8,11 @@ for kk=1:25
     r = sqrt(r1^2+(r2^2-r1^2)*rand(1,n));
     t = 2*pi*rand(1,n);
     x = r.*cos(t);
-    y = abs(r.*sin(t))+2.5;
-    plot(x,y,'r o')
-    hold on
+    y = abs(r.*sin(t))+sep;
 
     x1 = r.*cos(t)+12.5;
-    y1 = -abs(r.*sin(t))-2.5;
-    plot(x1,y1,'b o')
-    axis equal
+    y1 = -abs(r.*sin(t));
+
     traindata1=cat(1,x.',x1.');
     traindata2=cat(1,y.',y1.');
     traindata3=cat(2,traindata1,traindata2);
@@ -51,20 +48,10 @@ for kk=1:25
             end
         end
     end
-%     syms x1 x2
-%     Xs=[1 x1 x2];
-%     f=sum(w.*Xs); 
-%     fimplicit(f,'m')
-
     iter(kk)=flag2;
 end
 cc=linspace(1,25,25);
 plot(cc,iter,'r')
-
-% [a b c d e]=regress(ones(length(traindata2),1),traindata2);
-% syms t
-% y=a*t;
-% fplot(y) %linear regress
 
     
     

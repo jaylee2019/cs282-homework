@@ -104,10 +104,7 @@ hhh=linspace(1,1000,1000);
 plot(hhh,Ein2)
 xlabel('iteration')
 ylabel('Ein')
-% [a b c d e]=regress(ones(length(traindata2),1),traindata2);
-% syms t
-% y=a*t;
-% fplot(y) %linear regress
+
 
     
     
